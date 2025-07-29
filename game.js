@@ -11,7 +11,7 @@ backgroundMusic.play();
 let musicStarted = false;
 
 const walkSound = new Audio("assets/walk.mp3");
-walkSound.volume = 0.3;
+walkSound.volume = 0.4;
 
 const clickSound = new Audio("assets/click.mp3");
 clickSound.volume = 0.8;
@@ -25,7 +25,7 @@ soundButton.addEventListener("click", () => {
 
   backgroundMusic.muted = isMuted;
   clickSound.muted = isMuted;
-  walkSound.muted = isMuted; // if you decide to use it
+  walkSound.muted = isMuted;
 
   soundButton.textContent = isMuted ? "🔇" : "🔊";
 });
@@ -33,7 +33,6 @@ soundButton.addEventListener("click", () => {
 
 const BASE_WIDTH = 1536;
 const BASE_HEIGHT = 695;
-// const scale = Math.min(widthRatio, heightRatio);
 
 canvas.width = window.innerWidth; // 1536
 canvas.height = window.innerHeight; // 695
@@ -164,7 +163,7 @@ const teamMembers = [
     yRatio: 0.17, // 120
     width: 25,
     height: 32,
-    bio: "\nHey there! I’m Henry, your soon-to-be Cấp 3 buddy. I’m from Đoàn Tôma Thiện located in Toronto, ON. I brought a volleyball, but I forgot my pump. Could you help me find one? \nPope Francis often exclaimed, “Todos, todos, todos!” (Everyone, everyone, everyone!) at World Youth Day in 2023. That resonates with me. \nAre you hungry? Head to the kitchen for some snacks! I’ll be making dinner soon :)",
+    bio: "\nAhoy! I’m Henry, your soon-to-be Cấp 3 buddy. I’m from Đoàn Tôma Thiện located in Toronto, ON. I brought a volleyball, but I forgot my pump. Could you help me find one? \nPope Francis often exclaimed, “Todos, todos, todos!” (Everyone, everyone, everyone!) at World Youth Day in 2023. That resonates with me. \nAre you hungry? Head to the kitchen for some snacks! I’ll be making dinner soon :)",
     img: new Image()
   },
   {
@@ -173,7 +172,7 @@ const teamMembers = [
     yRatio: 0.16, // 110
     width: 25,
     height: 32,
-    bio: "\nHeyo! I’m Gabriel, I hope you’re having fun! I’m in Vancouver, B.C. in Đoàn Thánh Giuse with Thanh Mỹ. You know what they say, the West Coast is the best coast! \n“The Cross is the school of love,” says St. Maximilian Kolbe; I’m inclined to agree and live by this each day. \nDid you see a laundry room anywhere? We’ll be camping for 5 days!",
+    bio: "\nHeyo! I’m Gabriel, I hope you’re having fun! I’m in Vancouver, B.C. in Đoàn Thánh Giuse with Thanh Mỹ. You know what they say, the West Coast is the best coast! \n“The Cross is the school of love”, says St. Maximilian Kolbe; I’m inclined to agree and live by this each day. \nDid you see a laundry room anywhere? We’ll be camping for 5 days!",
     img: new Image()
   },
   {
@@ -182,7 +181,7 @@ const teamMembers = [
     yRatio: 0.13, // 90
     width: 25,
     height: 32,
-    bio: "\nHey! I’m Aaron. I hope you’re doing well! I’m a member of Đoàn Emmanuel which is based in Olympia, WA. We’ve got a booming city and breathtaking hikes. What more could you ask for? \nMy favourite Bible verse is: Then Jesus, crying with a loud voice, said, “Father, into your hands I commend my spirit.” Having said this, he breathed his last. (Luke 23:46). \nHave you seen the TNTT logo by the front door? Looks like a good guy.",
+    bio: "\nHey! I’m Aaron. I hope you’re doing well! I’m a member of Đoàn Emmanuel which is based in Olympia, WA. We’ve got a booming city and breathtaking hikes. What more could you ask for? \nMy favourite Bible verse is: Then Jesus, crying with a loud voice, said, “Father, into your hands I commend my spirit.” Having said this, he breathed his last (Luke 23:46). \nHave you seen the TNTT logo by the front door? Looks like a good guy.",
     img: new Image()
   },
   {
@@ -191,7 +190,7 @@ const teamMembers = [
     yRatio: 0.43, // 300
     width: 25,
     height: 32,
-    bio: "\nHey there! My name is Theresa, think fast! What’s our đội name?! Good answer. I’m from Đoàn Thánh Giuse like Gabriel and Thanh Mỹ, but my đoàn is based in Minneapolis, MN. \nI am deeply inspired by The Little Flower of Jesus, specifically her emphasis on spreading love. “What matters in life is not great deeds, but great love.” - St. Therese of Lisieux.\n I hope there are strawberries in the garden…",
+    bio: "\nHey there! My name is Theresa, think fast! What’s our đội name?! If you said Gioan, you passed :) I’m from Đoàn Thánh Giuse like Gabriel and Thanh Mỹ, but my đoàn is based in Minneapolis, MN. \nI am deeply inspired by The Little Flower of Jesus, specifically her emphasis on spreading love. “What matters in life is not great deeds, but great love.” - St. Therese of Lisieux.\n I hope there are strawberries in the garden…",
     img: new Image()
   },
   {
@@ -218,7 +217,7 @@ const teamMembers = [
     yRatio: 0.46, // 320
     width: 25,
     height: 32,
-    bio: "\nS’up, I’m Larry. How’s the weather over there? I’m a member of Đoàn Anrê Dũng Lạc, where we enjoy the weather in sunny Houston, TX. Have you ever had a real Texas BBQ? It’ll change your life. \nJeremiah 29:11 reads, “For I know the plans I have for you,declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future.” This is a beautiful promise, showing that God is in control and that He loves His children. \nI hope there’s WiFi here…",
+    bio: "\nS’up, I’m Larry. How’s the weather over there? I’m a member of Đoàn Anrê Dũng Lạc, where we enjoy the weather in sunny Houston, TX. Have you ever had a real Texas BBQ? It’ll change your life. \nJeremiah 29:11 reads, “For I know the plans I have for you, declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future.” This is a beautiful promise, showing that God is in control and that He loves His children. \nI hope there’s WiFi here…",
     img: new Image()
   },
   {
@@ -236,7 +235,7 @@ const teamMembers = [
     yRatio: 0.91, // 630
     width: 25,
     height: 32,
-    bio: "\nHowdy! I’m Huy, I hope you didn’t get lost! I’m a member of Đoàn Đa Minh Úy. You can find us in San Antonio, TX. We’ve got sunny skies and good vibes. \nAs a Huynh Trưởng, I like to serve with the wisdom of the world’s most popular Bible verse. For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life (John 3:16). \nIf anyone asks where I am, don’t tell them where I’m hiding!",
+    bio: "\nHowdy! I’m Huy, I hope you didn’t get lost! I’m a member of Đoàn Đa Minh Úy. You can find us in San Antonio, TX. We’ve got sunny skies and good vibes. \nAs a Huynh Trưởng, I like to serve with the wisdom of the world’s most popular Bible verse. “For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life” (John 3:16). \nIf anyone asks where I am, don’t tell them where I’m hiding!",
     img: new Image()
   },
   {
