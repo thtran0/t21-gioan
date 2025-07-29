@@ -3,20 +3,32 @@ const canvas = document.getElementById("gameCanvas");
 // 2d drawing context for canvas - where all drawing happens
 const ctx = canvas.getContext("2d");
 
-// const backgroundMusic = new Audio("assets/background.mp3");
-// backgroundMusic.loop = true;
-// backgroundMusic.volume = 0.2;
-// // backgroundMusic.play();
+const backgroundMusic = new Audio("assets/background.mp3");
+backgroundMusic.loop = true;
+backgroundMusic.volume = 0.1;
+backgroundMusic.play();
 
 let musicStarted = false;
 
 const walkSound = new Audio("assets/walk.mp3");
-// walkSound.loop = true;
-walkSound.speed = 0.1;
-walkSound.volume = 0.6;
+walkSound.volume = 0.3;
 
 const clickSound = new Audio("assets/click.mp3");
 clickSound.volume = 0.8;
+
+const soundButton = document.getElementById("toggleSound");
+
+let isMuted = false;
+
+soundButton.addEventListener("click", () => {
+  isMuted = !isMuted;
+
+  backgroundMusic.muted = isMuted;
+  clickSound.muted = isMuted;
+  walkSound.muted = isMuted; // if you decide to use it
+
+  soundButton.textContent = isMuted ? "🔇" : "🔊";
+});
 
 
 const BASE_WIDTH = 1536;
@@ -54,6 +66,7 @@ window.addEventListener("resize", () => {
 // start when clicked 
 document.addEventListener("keydown", () => {
   if (!musicStarted) {
+    backgroundMusic.muted = isMuted;
     backgroundMusic.play();
     musicStarted = true;
   }
@@ -363,15 +376,15 @@ function update() {
   // Animate if moved
   if (moved) {
     player.frameCount++;
-    // hereeeeee uncomment
-    if (!walkSound.paused) {
+    if (player.frameCount % 5 === 0) {
+    player.step = (player.step + 1) % 2;
+
+    // play footstep on every other step (for natural pacing)
+    if (player.step === 0) {
       walkSound.currentTime = 0;
-    } else {
       walkSound.play();
     }
-    if (player.frameCount % 10 === 0) {
-      player.step = (player.step + 1) % 2;
-    }
+  }
   } else {
     player.step = 0;
     player.frameCount = 0;
